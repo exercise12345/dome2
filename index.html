@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="header">
+    <section>
+      <span class="header-title">ToDoList</span>
+      <!--显示内容  placeholder  要求填写required   输入字段是否应该启用自动完成功能autocomplete-->
+      <input type="text" id="title" name="title" placeholder="添加ToDo" required="required" autocomplete="off">
+    </section>
+  </div>
+  <div class="show">
+    <section>
+      <h2>
+        正在进行 
+        <span id="todocount"></span>
+      </h2>
+			<ul class="todolist" >
+        <!-- draggable='true'标记可拖拽  参考样式-->
+        <!-- <li draggable='true'>
+          <input type="checkbox">
+          <p onclick="edit()"></p>
+          <a href="javascript:remove()">-</a>
+        </li> -->
+			</ul>
+			<h2>已经完成 
+        <span  id="donecount"></span>
+      </h2>
+			<ul class="donelist" >
+			</ul>
+    </section>
+  </div>
+  <div class="footer"></div>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

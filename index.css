@@ -1,0 +1,109 @@
+*{
+  padding: 0;
+  margin: 0;
+  
+}
+body{
+  background: #CDCDCD;
+}
+.header{
+  height: 50px;
+  background: rgb(50, 50, 50,0.98);
+  
+}
+section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 700px;
+  padding: 0 10px;
+  
+}
+h2{
+  width: 700px;
+  font-size: 24px;
+  margin: 20px 0;
+  position: relative;
+}
+h2 >span{
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  padding: 0 5px;
+  height: 20px;
+  border-radius: 20px;
+  background: #E6E6FA;
+  line-height: 22px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+.header-title{
+  
+  width: 100px;
+  font-size: 24px;
+  line-height: 50px;
+  color: #DDD;
+  cursor: pointer;
+}
+.header input{
+  width: 350px;
+  height: 24px;
+  text-indent: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+li {
+ list-style: none;
+ height: 32px;
+ width: 605px;
+ line-height: 32px;
+ background: #fff;
+ position: relative;
+ margin-bottom: 10px;
+ padding: 0 45px;
+ border-radius: 3px;
+ border-left: 5px solid #629A9C;
+}
+li>input {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+li p input{
+  position: absolute;
+    top: 5px;
+  height: 22px;
+  text-indent: 10px;
+  border-radius: 5px;
+  border: 1px;
+  outline: none;
+}
+li a {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 14px;
+  height: 12px;
+  border-radius: 14px;
+  border: 6px double #FFF;
+  background: #CCC;
+  line-height: 14px;
+  text-align: center;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+.donelist>li{
+  border-left: 5px solid #999;
+  opacity: 0.5;
+}
