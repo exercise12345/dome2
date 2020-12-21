@@ -52,10 +52,9 @@ function showList () {
   let todoString = "";
   let doneString = "";
   for (var i = data.length - 1; i >= 0; i--) {
-    
     if (data[i].done) {
       //根据done值  为ture时生成已经完成内容
-      doneString += 
+      doneString +=
       `<li draggable='true'>
         <input type = 'checkbox' onchange = 'updateData(`+ i + `,false)' checked ='checked' /> 
         <p id='`+i+`' onclick='editTodo(`+ i + `)'>` + data[i].title + `</p>
@@ -108,20 +107,26 @@ function removeTodo(i){
 
 function editTodo (i) {
   var p = document.getElementById(i);
-  console.log(i)
   initialTitle = p.innerText;
-  // p.innerHTML=""
-  p.innerHTML = "<input  value='" + initialTitle + "' />";
-  Event.preventDefault();
-  var inputTag = p.getElementsByTagName("input");
-  var data = loadStorageData();
-  data[i].done = title;
-
-
+  event.stopPropagation();
+  p.innerHTML=""
+  p.innerHTML = `<input autofocus value="` + initialTitle + `" />`;
+  
+  var inputTag = document.querySelector('li p input');
+  inputTag.focus();
+  inputTag.onchange = function () {
+    var data = loadStorageData();
+    data[i].title =inputTag.value;
+    localStorage.setItem("todo",JSON.stringify(data));
+    showList();
+  }
+  
+  
+  return false;
+ 
 }
 
-setTimeout(function () {
-  alert("niha");
-}, 3000);
+
+
 showList();
 

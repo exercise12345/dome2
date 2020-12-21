@@ -83,7 +83,7 @@ li p input{
   top: 5px;
   height: 22px;
   width: 250px;
-  text-indent: 10px;
+  /* text-indent: 10px;  字体离边框距离 */
   border-radius: 2px;
   outline: none;
   border: 1px solid gray; 
