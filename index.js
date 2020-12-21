@@ -58,7 +58,7 @@ function showList () {
       doneString += 
       `<li draggable='true'>
         <input type = 'checkbox' onchange = 'updateData(`+ i + `,false)' checked ='checked' /> 
-        <p id=`+i+` ondblclick='editTodo(`+ i + `)'>` + data[i].title + `</p>
+        <p id='`+i+`' onclick='editTodo(`+ i + `)'>` + data[i].title + `</p>
         <a href='javascript:removeTodo(`+ i + `)'>-</a>
       </li>`;
       doneCount++;
@@ -68,7 +68,7 @@ function showList () {
       todoString += 
       `<li draggable='true'>
         <input type='checkbox' onchange='updateData(` + i +` ,true)' />
-        <p id='`+i+`' ondblclick='editTodo(` + i + `)'> `+ data[i].title +` </p>
+        <p id='`+i+`' onclick='editTodo(` + i + `)'> `+ data[i].title +` </p>
         <a href='javascript:removeTodo( `+ i +` )'>-</a>
       </li>`;
       todoCount++;
@@ -105,12 +105,23 @@ function removeTodo(i){
  * 修改第几个事件内容
  * @param {传递索引} i 
  */
+
 function editTodo (i) {
   var p = document.getElementById(i);
-  title = p.innerText;
-  p.innerHTML=""
-  console.log(title)
-  p.innerHTML = "<input  value='" + title + "' />";
-  var input = document.getElementsByTagName("input")[i];
+  console.log(i)
+  initialTitle = p.innerText;
+  // p.innerHTML=""
+  p.innerHTML = "<input  value='" + initialTitle + "' />";
+  Event.preventDefault();
+  var inputTag = p.getElementsByTagName("input");
+  var data = loadStorageData();
+  data[i].done = title;
+
+
 }
+
+setTimeout(function () {
+  alert("niha");
+}, 3000);
 showList();
+

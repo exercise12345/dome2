@@ -80,12 +80,13 @@ li>input {
 
 li p input{
   position: absolute;
-    top: 5px;
+  top: 5px;
   height: 22px;
+  width: 250px;
   text-indent: 10px;
-  border-radius: 5px;
-  border: 1px;
+  border-radius: 2px;
   outline: none;
+  border: 1px solid gray; 
 }
 li a {
   position: absolute;
